@@ -1,37 +1,51 @@
 /* Importation des fonts */
 @font-face {
     font-family: "Alata";
-    src: url(./fonts/Alata-Regular.ttf);
+    src: url(../fonts/Alata-Regular.ttf);
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Josefin Sans";
-    src: url(./fonts/JosefinSans-Light.ttf);
+    src: url(../fonts/JosefinSans-Light.ttf);
     font-weight: 300;
 }
 
 
 html {
     scroll-behavior: smooth;
-  }
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body {
-    font-family: "Amatic";
+}
+
+body {
+    font-family: "Josefin Sans";
     background-color: #dfd4d4;
-    --couleurHot: rgb(248, 51, 51);
-    --couleurNews:var(--couleurNews)
-  }
-  img,
-  input {
+
+
+}
+
+img,
+input {
     width: 100%;
-  }
-  /* header */
-  nav {
+}
+
+#logo {
+    padding: 1rem;
+    color: #e9e9f3;
+    letter-spacing: 0.3rem;
+    font-family: "alata";
+    font-weight: 600;
+
+}
+
+
+/* header */
+nav {
     min-width: 100%;
     position: fixed;
     max-width: 1920px;
@@ -41,100 +55,87 @@ html {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-  }
-  
-  nav label img {
+}
+
+nav label img {
     width: 1.7rem;
     padding: 0.3rem;
     cursor: pointer;
     display: flex;
-  }
-  
-  #burger {
-    display: flex;
-  }
-  
-  #burger:checked ~ #navbar {
+}
+
+#burger {
+    display: none;
+}
+
+#burger:checked~#navbar {
     transition: all 0.7s;
     max-height: 600px;
-  }
-  
-  #navbar {
+}
+
+#navbar {
     position: absolute;
     top: 2.5rem;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #bebebe00;
     width: 100%;
     margin: 0;
     padding: 0rem;
     max-height: 0px;
     overflow: hidden;
-  }
-  
-  #navbar li {
+}
+
+#navbar li {
     margin: 0;
     padding: 0.3rem 0 0.3rem 1rem;
     list-style: none;
-  }
-  
-  .navMenu {
-    margin: 0 auto;
-    width: 90vw;
-    outline: 0.01rem white solid;
-    outline-offset: -1px;
-    display: flex;
-    flex-wrap: nowrap;
-  }
-  ul {
+}
+
+
+
+ul {
     padding-inline-start: 0;
-  }
-  .navMenu a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .navMenu li {
-    list-style: none;
-    margin: 0;
-    padding: 0.8rem 0;
-    width: 100%;
-    color: white;
-    text-align: center;
-    font-size: 1.5em;
-  }
-  
-  .navMenu li:hover {
-    cursor: pointer;
-    background-color: var(--couleurNews);
-  }
-  
-  nav:hover {
+}
+
+
+
+
+
+
+
+nav:hover {
     transition: all 0.7s;
     background-color: rgba(0, 0, 0, 0);
-  }
-  
-  #menu,
-  #about,
-  #contact,
-  #map,
-  .timeHeader {
+}
+
+
+#about {
     max-width: 1920px;
     margin: 0 auto;
-  }
-  
-  #navbar a {
+}
+
+#navbar a {
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1em;
     color: white;
     padding: 0.3rem 1.3rem;
-  }
-  
-  #navbar li:hover {
+    font-family: "alata";
+    font-weight: 300;
+
+}
+
+#navbar li:hover {
     background-color: rgba(0, 0, 0, 0.5);
-  }
-  h1 {
-    color: blanchedalmond;
-  }
-  header {
+}
+
+h1 {
+    color: white;
+    font-size: 30px;
+    font-family: Alata;
+    font-weight: 700;
+
+}
+
+header {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -145,141 +146,94 @@ html {
     margin: 0 auto;
     max-width: 1920px;
     height: 77vh;
-   
-  }
-  
-  .timeHeader > span {
-    position: relative;
-    left: 0.8rem;
-    top: -3rem;
-    margin-bottom: -3rem;
-    color: white;
+
+}
+
+
+
+
+.logoHeader h1 {
+    color: white(143, 33, 33);
     font-size: 1em;
-    padding: 0.3rem 1.3rem;
-    background-color: black;
-  }
-  
-  .logoHeader {
-    text-align: center;
-    left: 0px;
-    top: 0px;
-  }
-  
-  .logoHeader > span {
-    color: white;
-    font-size: 4em;
-  }
-  
-  .logoHeader > p > a {
+    font-family: "JosefinSans-Light";
+
+    font-weight: 300;
+}
+
+.logoHeader {
     color: white;
     font-size: 1.5em;
     padding: 0.3rem 1.3rem;
-    background-color: #f7ecec;
+
     text-decoration: none;
-  }
-  
-  .logoHeader > p > a:hover {
+    border: 2px solid white;
+}
+
+.logoHeader h1>a:hover {
     background-color: rgb(136, 136, 136);
-  }
-  /* main */
-  #menu,
-  #about,
-  #map,
-  #contact {
+}
+
+/* main */
+
+#about
+{
     display: flex;
     flex-direction: column;
     justify-content: center;
-  }
-  
-  .theMenu {
-    display: flex;
-    justify-content: center;
-  }
-  
-  #tabs-1,
-  #tabs-2,
-  #tabs-3 {
-    margin: 0 auto 5rem auto;
-  
-    width: 90vw;
-    background-color: white;
-    padding: 0 0.8rem;
-    box-sizing: border-box;
-  }
-  
-  #tabs-2,
-  #tabs-3 {
-    display: none;
-  }
-  /* selecteur tordu */
-  .piz:hover ~ #tabs-1 {
-    display: block;
-  }
-  #menu h3,
-  #menu p,
-  #menu hr {
-    margin: 0.5rem 0;
-  }
-  
-  .sectionTitle {
+}
+
+
+
+
+
+
+
+
+.sectionTitle {
     text-align: center;
     margin: 3rem 0;
     font-weight: 200;
-    color: white;
+    color: rgb(160, 35, 35);
     font-size: 3em;
-  }
+}
 
-  #about {
+#about {
     background-color: white(175, 99, 99);
     color: white;
-  }
-  
-  .aboutContent {
+}
+
+.aboutContent {
     width: 90vw;
     margin: 0 auto;
     font-size: 1.2em;
     line-height: 2em;
-  }
-  .chefcard {
+}
+
+.card {
     display: flex;
     justify-content: space-between;
     margin: 2rem 0;
-  }
-  .chefcardtext {
+}
+
+.cardtext {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 70%;
-  }
-  .chefcardimg {
-    width: 30%;
+}
+
+.cardimg {
+    width: 80%;
     display: flex;
     align-items: center;
-  }
-  
-  .chef {
-    border-radius: 50%;
-    width: 100%;
-  }
-  
-  .restaurant {
-    width: 90vw;
-  }
-  
-  .open {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-bottom: 3rem;
-  }
-  
-  .open div {
-    width: 100%;
-  }
-  
-  #map {
-    overflow: hidden;
-  }
-  
+}
+
+
+
+
+
+
+
 footer {
     display: flex;
     justify-content: center;
@@ -287,50 +241,73 @@ footer {
     padding: 3rem 0;
     font-size: 1.7rem;
     color: white;
-  }
-  
-  footer a {
+    background-color: black;
+}
+
+footer a {
     color: white;
     text-decoration: none;
-  }
-  
-  .visible {
+
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.footer-icons img {
+    margin: 2rem;
+    /* Ajoutez une marge horizontale entre les icônes */
+    max-width: 30px;
+    padding-bottom: 1rem;
+
+
+}
+
+
+#icon-close {
+    display: flex;
+}
+
+
+
+.visible {
     display: block;
-  }
-  
-  .invisible {
+}
+
+.invisible {
     display: none;
-  }
-  @media screen and (min-width: 376px) {
+}
+
+@media screen and (min-width: 376px) {
     nav label {
-      display:flex;
+        display: flex;
     }
+
     #navbar {
-      position: static;
-      max-height: fit-content;
-      display: flex;
-      background-color: black;
+        position: static;
+        max-height: fit-content;
+        display: flex;
+        background-color: black;
     }
+
     /* header */
     header {
-      height: 55vh;
+        height: 55vh;
     }
-  
+
     /* main */
     #tabs-1,
     #tabs-2,
     #tabs-3,
-    .aboutContent 
-    .restaurant 
-    .formContact
-    .contactBtn {
-      width: 70vh;
+    .aboutContent .restaurant .formContact .contactBtn {
+        width: 70vh;
     }
-  
-  
-  
-  
-    
-  }
-  
-  
+
+
+
+
+
+}
