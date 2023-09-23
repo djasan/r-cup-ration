@@ -12,159 +12,325 @@
 }
 
 
-/* nav */
-
-div {
-    height: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px;
-}
-
-#parent {
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    box-shadow: 0px 11px 5px -6px #2e2929c2;
-    background-color: #160e0e00;
-    position: fixed;
+html {
+    scroll-behavior: smooth;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Amatic";
+    background-color: #dfd4d4;
+    --couleurHot: rgb(248, 51, 51);
+    --couleurNews:var(--couleurNews)
+  }
+  img,
+  input {
     width: 100%;
-    height: 4vh;
-    top: 0;
-
-
-
-
-
-}
-
-#enfant1 {
-
-    font-family: var(JosefinSans-Light);
+  }
+  /* header */
+  nav {
+    min-width: 100%;
+    position: fixed;
+    max-width: 1920px;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  nav label img {
+    width: 1.7rem;
+    padding: 0.3rem;
+    cursor: pointer;
+    display: flex;
+  }
+  
+  #burger {
+    display: flex;
+  }
+  
+  #burger:checked ~ #navbar {
+    transition: all 0.7s;
+    max-height: 600px;
+  }
+  
+  #navbar {
+    position: absolute;
+    top: 2.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    margin: 0;
+    padding: 0rem;
+    max-height: 0px;
+    overflow: hidden;
+  }
+  
+  #navbar li {
+    margin: 0;
+    padding: 0.3rem 0 0.3rem 1rem;
+    list-style: none;
+  }
+  
+  .navMenu {
+    margin: 0 auto;
+    width: 90vw;
+    outline: 0.01rem white solid;
+    outline-offset: -1px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  ul {
+    padding-inline-start: 0;
+  }
+  .navMenu a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navMenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0.8rem 0;
+    width: 100%;
     color: white;
-    font-weight: 600;
-    font-size: 16px;
-}
+    text-align: center;
+    font-size: 1.5em;
+  }
+  
+  .navMenu li:hover {
+    cursor: pointer;
+    background-color: var(--couleurNews);
+  }
+  
+  nav:hover {
+    transition: all 0.7s;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  
+  #menu,
+  #about,
+  #contact,
+  #map,
+  .timeHeader {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+  
+  #navbar a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 0.3rem 1.3rem;
+  }
+  
+  #navbar li:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  h1 {
+    color: blanchedalmond;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("./image-hero.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+    max-width: 1920px;
+    height: 77vh;
+   
+  }
+  
+  .timeHeader > span {
+    position: relative;
+    left: 0.8rem;
+    top: -3rem;
+    margin-bottom: -3rem;
+    color: white;
+    font-size: 1em;
+    padding: 0.3rem 1.3rem;
+    background-color: black;
+  }
+  
+  .logoHeader {
+    text-align: center;
+    left: 0px;
+    top: 0px;
+  }
+  
+  .logoHeader > span {
+    color: white;
+    font-size: 4em;
+  }
+  
+  .logoHeader > p > a {
+    color: white;
+    font-size: 1.5em;
+    padding: 0.3rem 1.3rem;
+    background-color: #f7ecec;
+    text-decoration: none;
+  }
+  
+  .logoHeader > p > a:hover {
+    background-color: rgb(136, 136, 136);
+  }
+  /* main */
+  #menu,
+  #about,
+  #map,
+  #contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .theMenu {
+    display: flex;
+    justify-content: center;
+  }
+  
+  #tabs-1,
+  #tabs-2,
+  #tabs-3 {
+    margin: 0 auto 5rem auto;
+  
+    width: 90vw;
+    background-color: white;
+    padding: 0 0.8rem;
+    box-sizing: border-box;
+  }
+  
+  #tabs-2,
+  #tabs-3 {
+    display: none;
+  }
+  /* selecteur tordu */
+  .piz:hover ~ #tabs-1 {
+    display: block;
+  }
+  #menu h3,
+  #menu p,
+  #menu hr {
+    margin: 0.5rem 0;
+  }
+  
+  .sectionTitle {
+    text-align: center;
+    margin: 3rem 0;
+    font-weight: 200;
+    color: white;
+    font-size: 3em;
+  }
 
-
-div ul,
-a {
+  #about {
+    background-color: white(175, 99, 99);
+    color: white;
+  }
+  
+  .aboutContent {
+    width: 90vw;
+    margin: 0 auto;
+    font-size: 1.2em;
+    line-height: 2em;
+  }
+  .chefcard {
     display: flex;
     justify-content: space-between;
+    margin: 2rem 0;
+  }
+  .chefcardtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+  }
+  .chefcardimg {
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .chef {
+    border-radius: 50%;
+    width: 100%;
+  }
+  
+  .restaurant {
+    width: 90vw;
+  }
+  
+  .open {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-bottom: 3rem;
+  }
+  
+  .open div {
+    width: 100%;
+  }
+  
+  #map {
+    overflow: hidden;
+  }
+  
+footer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.7rem;
+    color: white;
+  }
+  
+  footer a {
     color: white;
     text-decoration: none;
-    font-size: 11px;
-    font-family: var(Alata-Regular);
-    font-weight: 400;
-
-}
-
-header {
-    background-image: url(./image-hero.jpg);
-    background-repeat: no-repeat;
-
-    background-position: center;
-    height: 70vh;
-    width: 100wh;
-}
-
-.parent2 {
-    height: 25vh;
-    display: flex;
-    padding: 16px;
-
-    color: white;
-    font-family: var(JosefinSans-Light);
-}
-
-#cadre {
-    border: 3px solid white;
-    /* Exemple de bordure autour du cadre */
-    padding: 20px;
-    /* Exemple de marge intérieure pour le cadre */
-    height: 25vh;
-    width: 45vw;
-}
-
-.contenucadre {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    flex-direction: column;
-    font-size: 30px;
-    font-family: var(JosefinSans-Light);
-}
-
-/* Styles pour chaque élément de texte */
-.Immersive {
-    color: white;
-    /* Exemple de couleur de texte */
-}
-
-.experiences {
-    color: white;
-    /* Exemple de couleur de texte */
-}
-
-.that {
-    color: white;
-    /* Exemple de couleur de texte */
-}
-
-.deliver {
-    color: white;
-    /* Exemple de couleur de texte */
-}
-.Immersive,
-.experiences,
-.that,
-.deliver {
-    color: white;
-    padding: 0;
-    /* Réduisez l'espace entre les éléments ici */
-}
-
-
-
-
-
-footer {
-    background-color: black;
-}
-
-footer,
-h5 {
-    color: white;
-    font-size: 16px;
-    font-family: var(JosefinSans-Light);
-    font-weight: 600;
-}
-
-.image-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espace entre les images */
   }
   
-  .image-item {
-    background-color: #f0f0f0; /* Couleur de fond du cadre */
-    padding: 20px; /* Espace interne du cadre */
-    text-align: center;
+  .visible {
+    display: block;
   }
   
-  .image-item img {
-    max-width: 100%; /* Empêche l'image de dépasser la largeur du cadre */
+  .invisible {
+    display: none;
+  }
+  @media screen and (min-width: 376px) {
+    nav label {
+      display:flex;
+    }
+    #navbar {
+      position: static;
+      max-height: fit-content;
+      display: flex;
+      background-color: black;
+    }
+    /* header */
+    header {
+      height: 55vh;
+    }
+  
+    /* main */
+    #tabs-1,
+    #tabs-2,
+    #tabs-3,
+    .aboutContent 
+    .restaurant 
+    .formContact
+    .contactBtn {
+      width: 70vh;
+    }
+  
+  
+  
+  
+    
   }
   
-  /* Styles pour les titres h3 et les descriptions h4 */
-  .image-item h3 {
-    font-size: 1.5rem;
-    margin: 10px 0;
-  }
   
-  .image-item h4 {
-    font-size: 1rem;
-    margin: 10px 0;
-  }
